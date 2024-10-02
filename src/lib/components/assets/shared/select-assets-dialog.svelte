@@ -115,30 +115,6 @@
         selectedAsset = null;
       }}
     >
-      <OptionGroup label={$_('assets_dialog.location.local')}>
-        <Option name="upload" label={$_('upload')} selected={showUploader} />
-      </OptionGroup>
-      <OptionGroup label={$_('assets_dialog.location.repository')}>
-        {#if showEntryAssets}
-          <Option
-            name="entry-assets"
-            label={$_('entry_assets')}
-            selected={libraryName === 'entry-assets'}
-          />
-        {/if}
-        {#if showCollectionAssets}
-          <Option
-            name="collection-assets"
-            label={$_('collection_assets')}
-            selected={libraryName === 'collection-assets'}
-          />
-        {/if}
-        <Option
-          name="all-assets"
-          label={$_('all_assets')}
-          selected={libraryName === 'all-assets'}
-        />
-      </OptionGroup>
       {#if canEnterURL || !!Object.keys(allCloudStorageServices).length}
         <OptionGroup label={$_('assets_dialog.location.external_locations')}>
           {#if canEnterURL}
